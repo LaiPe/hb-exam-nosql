@@ -133,3 +133,25 @@ db.legos.find(
         annee_sortie: { $gte: 2000, $lte: 2010 }
     }
 );
+
+// -- 3g 
+
+db.legos.aggregate([
+    {
+        $match: {
+            nombre_de_pieces: { $gt: 1000 }
+        }
+    },
+    {
+        $addFields: {
+            moyenne_evaluations: {
+                $avg: "$evaluations.note"
+            }
+        }
+    },
+    {
+        $match: {
+            moyenne_evaluations: { $gte: 4 }
+        }
+    }
+]);
