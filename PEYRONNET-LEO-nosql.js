@@ -151,3 +151,28 @@ db.legos.aggregate([
         }
     }
 ]);
+
+
+// -- 4 : Suppression
+
+// -- 4a 
+
+db.legos.updateOne(
+    {
+        nom: "Faucon Millenium"
+    },
+    {
+        $pull: {
+            evaluations: {
+                utilisateur: "Frank" // et non Bob :)
+            }
+        }
+    }
+);
+
+
+// -- 4b
+
+db.legos.deleteMany({
+    'nombre_de_pieces': { $lt: 1000 }
+});
