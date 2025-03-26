@@ -112,3 +112,15 @@ db.legos.find(
         "evaluations.note": { $gte: 4 } 
     }
 );
+
+// -- 3e
+
+db.legos.find(
+    { 
+        $or: [
+            { theme: "Technic" },
+            { theme: "Creator" }
+        ],
+        nombre_de_pieces: { $lt: 2000 }
+    }
+);
