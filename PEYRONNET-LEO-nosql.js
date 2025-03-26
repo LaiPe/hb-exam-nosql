@@ -77,3 +77,15 @@ db.legos.find(
         annee_sortie: -1 
     }
 );
+
+// -- 3b
+
+db.legos.find(
+    { 
+        prix: { $gt: 100 } 
+    }
+).sort(
+    { 
+        nombre_de_pieces: -1 
+    }
+);
