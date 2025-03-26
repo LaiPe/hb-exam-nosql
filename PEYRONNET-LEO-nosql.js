@@ -152,6 +152,20 @@ db.legos.aggregate([
     }
 ]);
 
+// -- 3h
+
+db.legos.find(
+    {
+        'evaluations': {
+            $not: {
+                $elemMatch: {
+                    'note': { $ne: 5 }
+                }
+            }
+        }
+    }
+);
+
 
 // -- 4 : Suppression
 
