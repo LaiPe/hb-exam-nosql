@@ -105,3 +105,10 @@ db.legos.find(
     }
 ).limit(3);
 
+// -- 3d
+
+db.legos.find(
+    { 
+        "evaluations.note": { $gte: 4 } 
+    }
+);
