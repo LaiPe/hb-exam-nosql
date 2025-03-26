@@ -37,4 +37,29 @@ db.legos.insertMany(
     ]
 );
 
+// -- 2 : Modification
 
+// -- 2a
+
+db.legos.update(
+    {nom: "Lego Creator 3-in-1"},
+    {$set :
+        {prix: 49.99}
+    }
+);
+
+// -- 2b
+
+db.legos.updateOne(
+    { 
+        nom: "Faucon Millenium" 
+    },
+    { 
+        $push: { 
+            evaluations: { 
+                nom: "Frank", 
+                note: 4 
+            } 
+        } 
+    }
+);
