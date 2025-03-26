@@ -63,3 +63,17 @@ db.legos.updateOne(
         } 
     }
 );
+
+// -- 3 : Recherche
+
+// -- 3a
+
+db.legos.find(
+    { 
+        theme: "Star Wars" 
+    }
+).sort(
+    { 
+        annee_sortie: -1 
+    }
+);
