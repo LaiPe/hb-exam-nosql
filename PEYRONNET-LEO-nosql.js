@@ -138,11 +138,6 @@ db.legos.find(
 
 db.legos.aggregate([
     {
-        $match: {
-            nombre_de_pieces: { $gt: 1000 }
-        }
-    },
-    {
         $addFields: {
             moyenne_evaluations: {
                 $avg: "$evaluations.note"
@@ -151,7 +146,8 @@ db.legos.aggregate([
     },
     {
         $match: {
-            moyenne_evaluations: { $gte: 4 }
+            moyenne_evaluations: { $gte: 4 },
+            nombre_de_pieces: { $gt: 1000 }
         }
     }
 ]);
