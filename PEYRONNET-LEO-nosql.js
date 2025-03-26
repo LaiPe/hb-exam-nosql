@@ -124,3 +124,12 @@ db.legos.find(
         nombre_de_pieces: { $lt: 2000 }
     }
 );
+
+// -- 3f
+
+db.legos.find(
+    { 
+        theme: "Harry Potter",
+        annee_sortie: { $gte: 2000, $lte: 2010 }
+    }
+);
