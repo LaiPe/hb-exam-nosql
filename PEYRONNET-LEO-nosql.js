@@ -57,7 +57,7 @@ db.legos.updateOne(
     { 
         $push: { 
             evaluations: { 
-                nom: "Frank", 
+                utilisateur: "Frank", 
                 note: 4 
             } 
         } 
