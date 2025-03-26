@@ -89,3 +89,19 @@ db.legos.find(
         nombre_de_pieces: -1 
     }
 );
+
+// -- 3c
+
+db.legos.find(
+    {},
+    { 
+        _id: 0, 
+        nom: 1, 
+        nombre_de_figures: 1 
+    }
+).sort(
+    { 
+        nombre_de_figures: -1 
+    }
+).limit(3);
+
